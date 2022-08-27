@@ -7,8 +7,12 @@
 * <3> 輸入 & 輸出
 * <4> 字串
 * <5> 串列
-* <> 迴圈
-* <> 
+* <6> 字典
+* <7> 條件判斷
+* <8> 例外處理
+* <9> 迴圈
+* <10> 函式 (function)
+* <11> 類別 (Class)
 ---
 
 ## <0> 名詞解釋
@@ -409,12 +413,12 @@ a = 1
     #output:PASS
     ```
 
-## <> 例外處理
+## <8> 例外處理
 <https://steam.oxxostudio.tw/category/python/basic/try-except.html>
 
 ---
 
-## <> 迴圈
+## <9> 迴圈
 * for迴圈 (for loops)
 
     * `for 變數 in range(起始值,終止值,遞增(減)值):`
@@ -562,7 +566,7 @@ a = 1
     '''
     ```
 
-# <> 函式 (function)
+# <10> 函式 (function)
 * 宣告函式
 
     ```py
@@ -749,7 +753,7 @@ a = 1
     
     `locals()` &rArr; 以字典型態回傳區域變數(在全域環境下呼叫則和 `globals()` 作用相同)
 
-* <> 類別 (Class)
+* <11> 類別 (Class)
 
     類別 : <https://www.learncodewithmike.com/2020/01/python-class.html>
     
