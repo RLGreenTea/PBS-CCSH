@@ -619,6 +619,26 @@ a = 1
     #output:17.301038062283737
     ```
 
+    * 提示回傳值類別
+
+        ```py
+        #有回傳值
+
+        def plus(a,b) -> int:
+            return a+b
+
+        plus(1,2)
+        ```
+
+        ```py
+        #沒有回傳值
+
+        def foo() -> None: #NoneType
+            print('Welcome')
+
+        foo()
+        ```
+
 * 全域變數 & 區域變數
 
     <https://ithelp.ithome.com.tw/articles/10206034>
