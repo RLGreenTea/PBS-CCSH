@@ -1,4 +1,4 @@
-# <center>Python Basic Syntax</center>
+# Python Basic Syntax
 
 ## 目錄
 * <0> 名詞解釋
@@ -566,7 +566,7 @@ a = 1
     '''
     ```
 
-# <10> 函式 (function)
+## <10> 函式 (function)
 * 宣告函式
 
     ```py
@@ -753,12 +753,12 @@ a = 1
     
     `locals()` &rArr; 以字典型態回傳區域變數(在全域環境下呼叫則和 `globals()` 作用相同)
 
-* <11> 類別 (Class)
+## <11> 類別 (Class)
 
-    類別 : <https://www.learncodewithmike.com/2020/01/python-class.html>
-    
-    方法 : <https://www.learncodewithmike.com/2020/01/python-method.htm>
+類別 : <https://www.learncodewithmike.com/2020/01/python-class.html>
 
-    屬性 : <https://www.learncodewithmike.com/2020/01/python-attribute.html>
+方法 : <https://www.learncodewithmike.com/2020/01/python-method.htm>
 
-    繼承 : <https://www.learncodewithmike.com/2020/01/python-inheritance.html>
+屬性 : <https://www.learncodewithmike.com/2020/01/python-attribute.html>
+
+繼承 : <https://www.learncodewithmike.com/2020/01/python-inheritance.html>
