@@ -41,20 +41,20 @@ a = 1
 ## <2> 資料型態 & 轉換
 
 ### 數值型態
-* 整數 (integer) &rarr; `1`
+* 整數 (int) &rarr; `1`
     
-* 浮點數 (floating-point) &rarr; `0.5`
+* 浮點數 (float) &rarr; `0.5`
 
     * 在Python和其他大部分語言中 , `0.1 + 0.2` 不等於 `0.3` , 這是因為二進位制的關係
 
-* 布林值 (boolean) &rarr; `True` | `False`
+* 布林值 (bool) &rarr; `True` | `False`
   
     * 有 `True`(真) 和 `False`(假) 兩種
 
         其中 `True` 為 **除了0之外的所有數** , `False` 為 **0**
 
 ### 字串型態
-* 字串 (string) &rarr; `'apple'`
+* 字串 (str) &rarr; `'apple'`
 
     * 字串用 `'` (單引號) 或 `"` (雙引號) 包起來
 
@@ -71,7 +71,7 @@ a = 1
 
 * 元組 (tuple) &rarr; `(1, 2)`
 
-* 字典 (dictionary) &rarr; ` {'Mon':'一', 'Tue':'二'}`
+* 字典 (dict) &rarr; ` {'Mon':'一', 'Tue':'二'}`
 
 * 集合 (set) &rarr; `{7, 14}`
   
@@ -82,28 +82,26 @@ a = 1
     ```py
     v = 1.5
     v = int(v)
-    print(v) #output:1
+    print(v)
+    #output:1
     ```
 
-* 數值 &hArr; 字串
+* 數值 &rarr; 字串
 
-    * `int` &rarr; `str`
+    ```py
+    a = 1
+    a = str(a)
+    ```
 
-        ```py
-        a, b = 1, 0.5
-        a, b = str(a), str(b)
-        print(type(a), type(b))
-        #output:<class 'str'> <class 'str'>
-        ```
+* 字串 &rarr; 數值
 
-    * `str` &rarr; `int`
+    ```py
+    b = '0.1'
+    b = float(b)
 
-        ```py
-        x, y = '5', '0.1'
-        x, y = int(x), float(y)
-        print(type(x), type(y))
-        #output:<class 'int'> <class 'float'>
-        ```
+    c = '5'
+    c = int(c)
+    ```
 
 * 每個型態都可以轉為 **str** , 但不是每個都轉得回來
 
@@ -113,29 +111,38 @@ a = 1
 
 * `print()`
 
-    * 括號裡可以放任意型態的資料
+    * 括號裡放任意型態的資料
 
     * 用 `,` 分隔資料 , 輸出時會有一格空格分隔
 
         ```py
-        v = 1
-        print(v,v) #output:1 1
+        print('Hello','World')
+        #output:Hello World
         ``` 
 
-    * `f-string` (格式化字串) | 在字串前加上 `f` , 字串內部的資料用 `{}` 包起來 ; 可以賦值給變數
+    * `f-string` (格式化字串)
+    
+        在字串前加上 `f` , 字串內部的資料用 `{}` 包起來
 
         ```py
-        t, f = True, False
-        print(f'{t}/{f}') #output:True/False
+        a = 1
+        b = 2
+        print(f'{a}/{b}')
+        #output:1/2
         ```
 
-    * `sep = ''` | 分隔符號 , 預設為 **一格空白**
+    * `sep=`
+    
+        分隔符號 , 預設為 **一格空白**
 
         ```py
-        print(True, False, sep='|') #output:True|False
+        print(1,2, sep=':')
+        #output:1:2
         ```
 
-    * `end = ''` | 結尾符號 , 預設為 `\n` **換行符號**
+    * `end=`
+    
+        結尾符號 , 預設為 `\n` **換行符號**
 
         不想換行可以用 `end=''`
 
@@ -145,14 +152,19 @@ a = 1
         #output:abcdef
         ```
 
-    * `flush = True` &rArr; 強行重新整理 , 預設為 `False`
+    * `flush=True`
     
-        當 print() 在迴圈裡且引數 `end` 不為預設值 `\n` 時 , 輸出就會堵塞 , 一次性輸出而非順序輸出 , 這時就需要 `flush=True`
+        強行重新整理 , 預設為 `False`
+    
+        當 print() 在迴圈裡且參數 `end` 不為預設值 `\n` 時 , 輸出就會堵塞 , 一次性輸出而非順序輸出 , 這時就需要加 `flush=True`
 
         ```py
         #一次性輸出的Loading bar
+
         import time
+
         print('Loading', end='')
+
         for i in range(6): #重複6次
             print('.', end='')
             time.sleep(0.5) #等待0.5秒
@@ -160,8 +172,11 @@ a = 1
 
         ```py
         #正常輸出的Loading bar
+
         import time
+
         print('Loading', end='')
+
         for i in range(6): #重複6次
             print('.', end='', flush=True)
             time.sleep(0.5) #等待0.5秒
@@ -172,10 +187,11 @@ a = 1
     * 括號內文字的作用為提醒使用者的文字
       
         ```py
-        name = input('Enter Your Name : ') #output:Enter Your Name : 
+        name = input('Enter Your Name : ')
+        #output:Enter Your Name : 
         ```
     
-    * 注意 : input() 回傳值皆為 `str` 型態 , 需要時要進行轉換
+    * 注意 : input() 回傳值皆為 `str` 型態 , 必要時需要進行轉換
 
         ```py
         age = int(input('Enter Your Age : '))
@@ -184,7 +200,9 @@ a = 1
     * 可以用 `split()` 方法達成一行輸入多個資料
 
         ```py
-        l = input('輸入姓名 & 年齡 (用一格空格分隔)').split(' ') #split()會回傳串列
+        l = input('輸入姓名 & 年齡 (用一格空格分隔)').split(' ')
+        #split()會回傳串列
+
         name = l[0]
         age = int(l[1])
         ```
@@ -194,16 +212,21 @@ a = 1
   
     ```py
     s = 'Hello' + 'World'
-    print(s) #output:HelloWorld
+    print(s)
+    #output:HelloWorld
     ```
 
-* `f-string` 格式化字串
+* `f-string`
+
+    格式化字串
 
     ```py
-    i = 2
-    s = 'a'
-    v = f'{i}{s}'
-    print(v) #output:2a
+    a = 2
+    b = 3
+
+    ans = f'{a*b}'
+    print(ans)
+    #output:6
     ```
 
 * 位置
@@ -219,88 +242,112 @@ a = 1
     
         ```py
         l = 'apple'
-        print(l[0]) #output:a
-        print(l[-1]) #output:e
+        l[0]  #return:a
+        l[-1] #return:e
         ```
 
     * 取子字串
     
         ```py
         l = 'orange'
-        print(l[0:2]) #output:or
-        print(l[3:]) #output:nge
-        print(l[:4]) #output:oran
+        l[0:2] #return:or
+        l[3:]  #return:nge
+        l[:4]  #return:oran
         ```
     
-    * `find()` | 取得子字串位置 , 括號內放要找的字串(字元)
+    * `find()`
+    
+        取得子字串位置 , 括號內放要找的字串
 
         ```py
         s = 'abcdef'
-        print(s.find('a')) #output:0
-        print(s.find('cd')) #output:2 #回傳子字串首字在母字串的位置
-        print(s.find('z')) #output:-1 #沒有找到則回傳-1
+        s.find('a')  #return:0
+        s.find('cd') #return:2  #回傳子字串首字在母字串的位置
+        s.find('z')  #return:-1 #沒有找到則回傳-1
         ```
     
-* `split()` | 分割字串
+* `split()`
+    
+    分割字串
+    
+    `字串.split( 分隔符號(預設為一格空白) )`
 
-    ```
-    str.split(sep, maxsplit) -> str
-    ```
+    ```py
+    '1 2 3'.split()
+    #return:['1','2','3']
 
-    * 參數
-        
-        * **sep** (optional) &rarr; 分隔字符 , 預設為 **一格空白**
-
-        * **maxsplit** (optional) &rarr; 分割數量 , 預設為 **-1** (全部)
-
-    * 範例
-
-        ```py
-        s = '1 2 3'
-        s.split() #return:['1','2','3']
-        ```
-
-* `strip()` | 去除字串首尾指定的字符
-
-    ```
-    str.strip() -> str
+    '1.2.3'.split('.')
+    #return:[1,2,3]
     ```
 
-    * 參數
-  
-        * 只有一個 (optional) &rarr; 要去除的字符 , 預設為 **空格** & `\n` & `\t`
+* `strip()`
 
-    * 範例
-        ```py
-        '  abc  '.strip() #return:abc
-        ```
+    去除字串的首尾字串
+    
+    `字串.strip( 要去除的字串(預設為一格空白) )`
 
-* `upper()` | 將字串轉為大寫
+    ```py
+    '  abc  '.strip()
+    #return:abc
 
-    ```
-    str.upper() -> str
-    ```
-
-* `lower()` | 將字串轉為小寫
-
-    ```
-    str.lower() -> str
+    '...123...'.strip('...')
+    #return:123
     ```
 
-* `len()` | 回傳字串長度(字元數量) , 也可以用在串列 & 元組 & 字典 & 集合
+* `replace()`
 
+    取代字串內的字串
+    
+    `字串.replace( 舊字串 , 新字串 )`
+
+    ```py
+    '1 2 3'.replace(' ',',')
+    #return:1,2,3
     ```
-    len() -> int
+
+* `upper()`
+
+    將字串轉為大寫
+
+    `字串.upper()`
+
+    ```py
+    'Abby'.upper()
+    #return:ABBY
     ```
 
-    * 參數
+* `lower()`
 
-        * 只有一個 &rarr; 字串 , 串列 , 元組 , 字典 , 集合
+    將字串轉為小寫
 
-* `str()` | 任意型態轉為字串
+    `字串.lower()`
 
+    ```py
+    'GMail'.lower()
+    #return:gmail
     ```
-    str() -> str
+
+
+* `len()`
+
+    回傳字串長度(字元數量) , 也可以用在串列 & 元組 & 字典 & 集合
+
+    `len(字串)`
+
+    ```py
+    len('Long')
+    #return:4
+    ```
+
+* `str()`
+
+    任意型態轉為字串
+
+    `str(資料)`
+
+    ```py
+    type(str(0.5))
+    #return:<class 'str'>
     ```
 
 ## <5> 串列
