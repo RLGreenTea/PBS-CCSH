@@ -613,6 +613,20 @@
     
         按 <kbd>Ctrl</kbd> + <kbd>C</kbd> 可以中斷無窮迴圈
 
+        ```py
+        while(True):
+            print('I am Infinite Loop')
+
+        '''output:
+        I am Infinite Loop
+        I am Infinite Loop
+        I am Infinite Loop
+        I am Infinite Loop
+        I am Infinite Loop
+        ...
+        KeyboardInterrupt'''
+        ```
+
 * `break` 中止
 
     ```py
