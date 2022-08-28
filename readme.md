@@ -17,20 +17,31 @@
 
 ## <0> 名詞解釋
 
-```py
-a = 1
-```
+* 基本
 
-`a` 為 **變數 (variable)**
+    ```py
+    a = 1
+    ```
 
-`=` 為 **指派運算子 (assign operator)**
+    `a` 為 **變數 (variable)**
 
-`1` 為 **值 (value)**
+    `=` 為 **指派運算子 (assign operator)**
 
-把 `1` 指派給 `a` 這個動作稱為 **賦值 (assign)**
+    `1` 為 **值 (value)**
 
-我們剛剛 **宣告 (declare)** 了一個變數
+    把 `1` 指派給 `a` 這個動作稱為 **賦值 (assign)**
 
+    我們剛剛 **宣告 (declare)** 了一個變數
+
+* 陳述式 vs 表達式
+
+    * 表達式 (expression)
+
+        像是 `1` , `'text'` , `0.5` , `2>1` , `False` ; 甚至 `foo()` , `myClass.myMethod()` 等有 **回傳值** 的語句都是表達式
+
+    * 陳述式 (statement)
+
+        除了表達式的所有語句 , 例如 **賦值** , **if-else** , **迴圈** ...等 **沒有回傳值** 的語句
 ---
 
 ## <1> 運算子
@@ -58,7 +69,7 @@ a = 1
 
     * 字串用 `'` (單引號) 或 `"` (雙引號) 包起來
 
-    * 多行字串用 `'''` 或 `"""` (三引號) 包起來
+    * 多行字串用 `` 或 `"""` (三引號) 包起來
 
         ```py
         text = '''
@@ -390,54 +401,94 @@ a = 1
 ---
 
 ## <7> 條件判斷
-* `if(條件):` | 當...則
+* `if`
+
+    當...則
+
+    ```
+    if(表達式):
+        # TODO
+    ```
 
     ```py
     a = 2
+
     if(a>=1):
         print('Yes')
+
     #output:Yes
     ```
 
-* `if-else` | (當...則...)(否則...)
+* `if-else`
+
+    當...則... , 否則...
+
+    ```
+    if(表達式):
+        # TODO
+    else:
+        # TODO
+    ```
 
     ```py
     a = 0
+
     if(a>=1):
         print('Yes')
     else:
         print('No')
+    
     #output:No
     ```
 
-* `if-elif-else` | (當...則...)(否則如果...則...)(否則...)
+* `if-elif-else`
 
-    注意 : 有 `elif` 就一定有 `else`
+    當...則... , 否則如果...則... , 否則...
+
+    注意 : 有 `elif` 就一定有 `else` , `elif` 可以有很多個
+
+    ```
+    if(表達式):
+        # TODO
+    elif(表達式):
+        # TODO
+    else:
+        # TODO
+    ```
 
     ```py
     age = 14
+
     if(age<14):
         print('無責任能力')
     elif(14<=age<18 or 80<=age):
         print('限制責任能力')
     else:
         print('完全責任能力')
+
     #output:限制責任能力
     ```
 
-* `and` 且 | `or`  或
+* `and` 且
+
+    `or`  或
 
     ```py
     x = 14
+
     if(x%2==0 and x%7==0):
         print(f'{x}是2和7的公倍數')
+
     #output:14是2和7的公倍數
     ```
 
-* `pass` | 不做任何事 , 可放在 `else` 語句
+* `pass`
+
+    不做任何事 , 可放在 `else` 語句
 
     ```py
     age = 14
+
     if(age<14):
         print('無責任能力')
     elif(14<=age<18 or 80<=age):
@@ -448,15 +499,17 @@ a = 1
         pass
     ```
 
-* 三元運算子 | 讓 `if-else` 更簡潔
+* 三元運算子
 
-    ```
-    條件為真 if 條件 else 條件為假
-    ```
+    讓 `if-else` 更簡潔
+
+    `(TODO條件為真) if (表達式) else (TODO條件為假)`
 
     ```py
     score = 60
+
     print('PASS' if score>=60 else 'FAIL')
+    
     #output:PASS
     ```
 
@@ -466,9 +519,9 @@ a = 1
 ---
 
 ## <9> 迴圈
-* for迴圈 (for loops)
+* for迴圈
 
-    * `for 變數 in range(起始值,終止值,遞增(減)值):`
+    * `for 變數 in range(起始值, 終止值, 遞增(減)值):`
 
         * 起始值 & 終止值 & 遞增(減)值 必為 **整數**
         
@@ -486,24 +539,20 @@ a = 1
             for i in range(3):
                 print(i)
 
-            '''
             output:
             0
             1
             2
-            '''
             ```
 
             ```py
             for i in range(5,2,-1):
                 print(i)
-
-            '''
-            output:
+            
+            '''output:
             5
             4
-            3
-            '''
+            3'''
             ```
 
     * `for 變數 in 資料:`
@@ -514,59 +563,55 @@ a = 1
             for i in 'abc':
                 print(i)
 
-            '''
-            output:
+            '''output:
             a
             b
-            c
-            '''
+            c'''
             ```
 
             ```py
             for i in [0,1,2]:
                 print(i)
 
-            '''
-            output:
+            '''output:
             0
             1
-            2
-            '''
+            2'''
             ```
 
             ```py
             Dict = {'Mon':'一', 'Tue':'二', 'Wed':'三'}
+
             for i in Dict:
                 print(f'{i}:{Dict[i]}')
 
-            '''
-            output:
+            '''output:
             Mon:一
             Tue:二
-            Wed:三
-            '''
+            Wed:三'''
             ```
 
-* while迴圈 (while loops)
+* while迴圈
 
     * `while(條件):`
       
         ```py
         i = 0
+
         while(i<=2):
             print(i)
 
-        '''
-        output:
+        '''output:
         0
         1
-        2
-        '''
+        2'''
         ```
 
-    * `while(True):` | 無窮迴圈
+    * `while(True):`
     
-        按 `Ctrl` + `C` 中斷無窮迴圈
+        無窮迴圈
+    
+        按 <kbd>Ctrl</kbd> + <kbd>C</kbd> 可以中斷無窮迴圈
 
 * `break` 中止
 
@@ -581,19 +626,17 @@ a = 1
             print(x)
     
         x += 1
-
-    '''
-    output:
+    
+    '''output:
     5
-    6
-    '''
+    6'''
     ```
 
 * `continue` 跳過本次迴圈 continue 以下內容
 
     ```py
     for i in range(2):
-        print(f'\ni={i}', end='')
+        print(f'i={i}', end='')
         print('a', end='')
         
         if(i==1):
@@ -601,16 +644,12 @@ a = 1
         
         print('b', end='')
 
-    '''
-    output:
-    
+    '''output:
     i=0
     a
     b
-    
     i=1
-    a
-    '''
+    a'''
     ```
 
 ## <10> 函式
@@ -654,6 +693,23 @@ a = 1
         welcome('Mike')
         #output:Welcome, Mike.
         ```
+
+    * 參數 vs 引數
+
+        ```py
+        def plus(x,y):
+            return x+y
+
+        a=1
+        b=2
+        plus(a,b)
+        ```
+
+        拿上面的例子來說
+
+        `x` 和 `y` 是 **參數(Argument)**
+
+        `a` 和 `b` 是 **引數(Parameter)**
 
 * 回傳
 
@@ -752,7 +808,7 @@ a = 1
 
 * 觀念題
 
-    * a.
+    * A.
 
         ```py
         x = 1
@@ -765,7 +821,7 @@ a = 1
         #output:?
         ```
 
-    * b.
+    * B.
 
         ```py
         x = 1
@@ -783,6 +839,7 @@ a = 1
 
         ```py
         x = 1
+
         def foo(x):
             global x
             x /= 10
@@ -794,11 +851,11 @@ a = 1
 
     * 答案
 
-        a. `14`
+        A. `14`
 
-        b. `-4`
+        B. `-4`
 
-* 如何調用和參數名稱一樣的全域變數 ? (有點邪門歪道)
+* 如何調用和參數名稱一樣的全域變數 ?
 
     ```py
     x = 1
@@ -829,3 +886,8 @@ a = 1
 屬性 : <https://www.learncodewithmike.com/2020/01/python-attribute.html>
 
 繼承 : <https://www.learncodewithmike.com/2020/01/python-inheritance.html>
+
+
+---
+
+如果你的腦袋還沒爆掉的話 , 恭喜你 , 你已經讀完了Python大部分的文法了 :)
