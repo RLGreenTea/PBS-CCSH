@@ -365,38 +365,95 @@
 * 新增元素
 
     ```py
-    l = [1, 2]
+    l = ['a', 'b']
     
     #新增到尾端
-    l.append(3)
+    l.append('c')
     print(l)
-    #output:[1, 2, 3]
+    #output:['a', 'b', 'c']
 
     #插入到指定位置
-    #insert(位置,元素)
-    l.insert(0, 0.1)
+    #串列.insert(位置,元素)
+    l.insert(0, 'start')
     print(l)
-    #output:[0.1, 1, 2, 3]
+    #output:['start', 'a', 'b', 'c']
     ```
 
 * 刪除元素
 
     ```py
-    l = [0.1, 1, 2, 3]
+    l = ['a', 'b', 'c', 'd']
 
-    #刪除尾端元素
-    l.pop()
+    #串列.pop( 位置(預設為-1) )
+    l.pop(2)
     print(l)
-    #output:[0.1, 1, 2]
+    #output:['a', 'b', 'd']
 
-    #刪除指定位置元素
-    del( l[0] )
+    #串列.remove(元素)
+    l.remove('a')
     print(l)
-    #output:[1, 2]
+    #output:['b', 'd']
     ```
 
 ## <6> 字典
-<https://medium.com/ccclub/ccclub-python-for-beginners-tutorial-533b8d8d96f3>
+* 基本認識
+
+    `{key:value}`
+
+    * 取全部 key / value
+
+        ```py
+        d = {'name':'Ray', 'age':18}
+
+        list(d.keys())
+        #return:['name', 'age']
+
+        list(d.values())
+        #return:['Ray', 18]
+        ```
+
+* 取元素
+
+    ```py
+    d = {'name':'Ray', 'age':18}
+
+    d['name']
+    #return:Ray
+    ```
+
+* 新增元素
+
+    ```py
+    d = {'name':'Ray', 'age':18}
+    
+    d['gender'] = 'male'
+    print(d)
+    #output:{'name':'Ray', 'age':18, 'gender':'male'}
+
+    d.update({'school':'ccsh'})
+    print(d)
+    #output:{'name':'Ray', 'age':18, 'gender':'male', 'school':'ccsh'}
+    ```
+
+* 更新 value
+
+    ```py
+    d = {'name':'Ray'}
+
+    d['name'] = 'Mike'
+    print(d)
+    #output:{'name':'Mike'}
+    ```
+
+* 刪除元素
+
+    ```py
+    d = {'Mon':'swim', 'Tue':'jog', 'Wed':'hike'}
+
+    d.pop('Mon')
+    print(d)
+    #output:{'Tue':'jog', 'Wed':'hike'}
+    ```
 
 ---
 
@@ -878,13 +935,13 @@
         x *= 2
         globals()['x'] *= 2
 
-        print(f'區域x: {x}')
-        print(f'全域x: {globals()['x']}')
+        print(f'區域x:{x}')
+        print(f'全域x:{globals()['x']}')
 
     foo(5)
     #output:
-    #區域x: 10
-    #全域x: 2
+    #區域x:10
+    #全域x:2
     ```
 
     `globals()` &rArr; 以字典型態回傳全域變數
